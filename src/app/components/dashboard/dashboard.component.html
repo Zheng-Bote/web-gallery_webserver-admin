@@ -1,0 +1,58 @@
+<h2 class="dashboard-title">Dashboard</h2>
+<p class="welcome-text">
+  Willkommen zurück, <strong>{{ authService.currentUser()?.username }}</strong
+  >!
+</p>
+
+<div class="dashboard-grid">
+  <mat-card class="dashboard-card hover-effect">
+    <mat-card-header>
+      <div mat-card-avatar class="avatar-icon primary-bg">
+        <mat-icon>photo_library</mat-icon>
+      </div>
+      <mat-card-title>Meine Fotos</mat-card-title>
+      <mat-card-subtitle>Galerie ansehen</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Du hast Zugriff auf deine private Sammlung und öffentliche Alben.</p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button color="primary">Öffnen</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="dashboard-card hover-effect">
+    <mat-card-header>
+      <div mat-card-avatar class="avatar-icon accent-bg">
+        <mat-icon>cloud_upload</mat-icon>
+      </div>
+      <mat-card-title>Upload</mat-card-title>
+      <mat-card-subtitle>Neue Bilder</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Lade Bilder per Drag & Drop oder Auswahl hoch.</p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button color="accent">Hochladen</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card
+    class="dashboard-card admin-card hover-effect"
+    *ngIf="authService.currentUser()?.id === 1 || authService.currentUser()?.username === 'admin'"
+  >
+    <mat-card-header>
+      <div mat-card-avatar class="avatar-icon warn-bg">
+        <mat-icon>security</mat-icon>
+      </div>
+      <mat-card-title>Admin Area</mat-card-title>
+      <mat-card-subtitle>Systemverwaltung</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Benutzer verwalten, Passwörter zurücksetzen, Logs prüfen.</p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="warn" routerLink="/admin/users">Verwalten</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

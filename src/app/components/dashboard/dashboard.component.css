@@ -1,0 +1,51 @@
+/* Grid Layout: Automatisch umbrechen */
+.dashboard-grid {
+  display: grid;
+  /* Spalten: mindestens 300px breit, so viele wie passen */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin: 30px;
+}
+
+/* Karten Design */
+.dashboard-card {
+  height: 100%; /* Damit alle gleich hoch sind */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Kleiner Hover-Effekt (Schatten) */
+.hover-effect {
+  transition: box-shadow 0.3s ease, transform 0.2s;
+}
+.hover-effect:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important; /* Material Elevation erhöhen */
+  transform: translateY(-2px);
+}
+
+/* Admin Karte speziell */
+.admin-card {
+  border: 1px solid #f44336; /* Roter Rand zur Warnung */
+  background-color: #fff5f5;
+}
+
+/* Icons schön rund machen */
+.avatar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+.primary-bg {
+  background-color: #3f51b5;
+}
+.accent-bg {
+  background-color: #ff4081;
+}
+.warn-bg {
+  background-color: #f44336;
+}

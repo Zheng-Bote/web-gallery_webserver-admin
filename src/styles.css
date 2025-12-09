@@ -1,0 +1,51 @@
+/* Import Roboto Font (Standard für Material Design) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  /* Roboto ist die Standard-Schrift für Angular Material */
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+
+  /* Ein leichtes Grau als Hintergrund ist angenehmer für die Augen als reines Weiß */
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* --- Layout Helfer --- */
+
+/* Der Haupt-Container für alle Seiten */
+.main-content {
+  /* Maximalbreite, damit es auf 4k Monitoren nicht unendlich breit wird */
+  max-width: 1200px;
+
+  /* Zentriert den Container horizontal */
+  margin: 0 auto;
+
+  /* Innenabstand, damit nichts am Rand klebt */
+  padding: 20px;
+
+  /* Damit der Container mindestens den ganzen Screen füllt (minus Navbar) */
+  min-height: calc(100vh - 64px);
+}
+
+/* Überschriften etwas schöner machen */
+h1,
+h2,
+h3 {
+  font-weight: 400; /* Material Design mag dünnere Überschriften */
+  margin-bottom: 16px;
+}
+
+/* Helfer für Abstände */
+.mt-20 {
+  margin-top: 20px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}

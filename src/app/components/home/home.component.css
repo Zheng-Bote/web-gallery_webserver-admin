@@ -1,0 +1,35 @@
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Höhe minus Navbar Höhe ca. */
+  height: 70vh;
+  text-align: center;
+}
+.hero-icon {
+  font-size: 80px;
+  width: 80px;
+  height: 80px;
+  color: #3f51b5;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #333;
+}
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+/* Button etwas vergrößern */
+button[mat-raised-button] {
+  padding: 8px 24px;
+  font-size: 1.1rem;
+}
