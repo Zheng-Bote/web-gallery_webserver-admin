@@ -141,7 +141,6 @@ bla bla ... with a little help from my friends
 ## folder structure
 
 <!-- readme-tree start -->
-
 ```
 .
 ├── .github
@@ -163,17 +162,84 @@ bla bla ... with a little help from my friends
 │       ├── repo-create_doctoc.yml_
 │       ├── repo-create_doctoc_md.yml
 │       └── repo-create_tree_readme.yml
+├── .gitignore
 ├── LICENSE
-├── LICENSE_Apache-2
-├── LICENSE_GPL-2
-├── LICENSE_GPL-3
-├── LICENSE_MIT
 ├── README.md
-└── tree.bak
+├── angular.json
+├── package-lock.json
+├── package.json
+├── proxy.conf.json
+├── public
+│   └── favicon.ico
+├── src
+│   ├── app
+│   │   ├── app.config.ts
+│   │   ├── app.css
+│   │   ├── app.html
+│   │   ├── app.routes.ts
+│   │   ├── app.spec.ts
+│   │   ├── app.ts
+│   │   ├── components
+│   │   │   ├── dashboard
+│   │   │   │   ├── dashboard.component.css
+│   │   │   │   ├── dashboard.component.html
+│   │   │   │   ├── dashboard.component.spec.ts
+│   │   │   │   └── dashboard.component.ts
+│   │   │   ├── home
+│   │   │   │   ├── home.component.css
+│   │   │   │   ├── home.component.html
+│   │   │   │   ├── home.component.spec.ts
+│   │   │   │   └── home.component.ts
+│   │   │   ├── login
+│   │   │   │   ├── login.component.css
+│   │   │   │   ├── login.component.html
+│   │   │   │   ├── login.component.spec.ts
+│   │   │   │   └── login.component.ts
+│   │   │   ├── navbar
+│   │   │   │   ├── navbar.component.component.css
+│   │   │   │   ├── navbar.component.component.html
+│   │   │   │   ├── navbar.component.component.spec.ts
+│   │   │   │   └── navbar.component.component.ts
+│   │   │   ├── user
+│   │   │   │   └── change-password
+│   │   │   │       ├── change-password.component.css
+│   │   │   │       ├── change-password.component.html
+│   │   │   │       ├── change-password.component.spec.ts
+│   │   │   │       └── change-password.component.ts
+│   │   │   └── user-management
+│   │   │       ├── user-management.component.css
+│   │   │       ├── user-management.component.html
+│   │   │       ├── user-management.component.spec.ts
+│   │   │       └── user-management.component.ts
+│   │   ├── dialogs
+│   │   │   └── password-reset-dialog.component.ts
+│   │   ├── guards
+│   │   │   └── password-reset.guard.ts
+│   │   ├── interceptors
+│   │   │   ├── auth.interceptor.spec.ts
+│   │   │   └── auth.interceptor.ts
+│   │   ├── models
+│   │   │   ├── auth.model.ts
+│   │   │   └── photo.model.ts
+│   │   └── service
+│   │       ├── admin.service.ts
+│   │       ├── auth.guard.ts
+│   │       ├── auth.service.spec.ts
+│   │       ├── auth.service.ts
+│   │       └── notification.service.ts
+│   ├── custom-theme.scss
+│   ├── environments
+│   │   └── environment.ts
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.css
+├── tree.bak
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json
 
-6 directories, 21 files
+23 directories, 72 files
 ```
-
 <!-- readme-tree end -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
