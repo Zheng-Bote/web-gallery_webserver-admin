@@ -9,6 +9,8 @@
     - [🛠️ Administration](#-administration)
   - [🏗️ Architecture](#-architecture)
     - [High-Level Overview](#high-level-overview)
+- [Key Architectural Conceptsignal-Driven State:](#key-architectural-conceptsignal-driven-state)
+        - [Still in progress](#still-in-progress)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
