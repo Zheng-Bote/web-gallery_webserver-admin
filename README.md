@@ -70,6 +70,92 @@ graph TD
         HttpClient -->|Intercept| Interceptor[AuthInterceptor]
         Interceptor -->|Add Token| API[Backend API]
     end
+```
+# Key Architectural Conceptsignal-Driven State:
+
+We utilize Angular Signals (e.g., currentUser, passwordChangeRequired) instead of complex RxJS streams for synchronous state management.
+
+This ensures "Zoneless" compatibility and fine-grained UI updates.
+
+Standalone Components:
+
+Components (e.g., UserManagementComponent, NavbarComponent) directly import their dependencies.
+
+This makes the codebase easier to refactor and test.
+
+Security Layer:
+
+Interceptor: The authInterceptor centrally manages the Authorization header.
+
+Guards: Functional guards (CanActivateFn) handle redirect logic (e.g., forcing a user to change their password before accessing the dashboard).
+
+🛠️ Tech Stack
+Framework: Angular v21
+
+Language: TypeScript 5.x
+
+UI Library: Angular Material v21 & CDK
+
+Styling: SCSS / CSS3 (Grid & Flexbox)
+
+Icons: Material Icons
+
+Build Tool: Angular CLI
+
+⚙️ Installation & Setup
+Prerequisites
+Node.js (v18 or higher)
+
+npm
+
+Running instance of the CrowQtServer backend.
+
+1. Clone the repository
+
+git clone [https://github.com/yourusername/web-gallery-frontend.git](https://github.com/yourusername/web-gallery-frontend.git)
+cd web-gallery-frontend
+
+2. Install Dependencies
+Bash
+
+npm install
+
+3. Configure Environment
+Check src/environments/environment.ts. Ensure apiUrl points to your C++ backend.
+
+TypeScript
+
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8080' // Adjust port if necessary
+};
+4. Run Development Server
+Bash
+
+ng serve
+Navigate to http://localhost:4200/.
+
+📂 Project Structure
+
+```
+src
+├── app/
+│   ├── components/      # Shared UI (Navbar, etc.)
+│   ├── dialogs/         # Modal Dialogs (Password Reset)
+│   ├── guards/          # Route protection logic
+│   ├── interceptors/    # HTTP Request modification
+│   ├── models/          # TypeScript Interfaces
+│   ├── pages/           # Views (Dashboard, Login, Admin)
+│   ├── service/         # API communication & State
+│   ├── app.component.ts # Root layout
+│   ├── app.config.ts    # Global provider config
+│   └── app.routes.ts    # Routing definitions
+└── environments/        # API configuration```
+```
+
+##### Still in progress
+
+
 <!-- readme-tree start -->
 ```
 .
