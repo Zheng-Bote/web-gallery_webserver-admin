@@ -1,24 +1,49 @@
+<div id="top" align="center">
+<h1>CrowQtServer - Admin Web Frontend</h1>
+
+<p>extending web-gallery_webserver to SCS (user management etc)</p>
+
+<p>Part of the Crow-Gallery Project</p>
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Zheng-Bote/web-gallery_webserver-admin?logo=GitHub)](https://github.com/Zheng-Bote/web-gallery_webserver-admin/releases)
+
+[Report Issue](https://github.com/Zheng-Bote/web-gallery_webserver-admin/issues) · [Request Feature](https://github.com/Zheng-Bote/web-gallery_webserver-admin/pulls)
+
+</div>
+
+<hr>
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents**
 
-- [CrowGallery - Web Frontend](#crowgallery---web-frontend)
+- [Description](#description)
   - [🚀 Features](#-features)
-    - [🔐 Authentication & Security](#-authentication--security)
-    - [📸 Gallery & Dashboard](#-gallery--dashboard)
-    - [🛠️ Administration](#-administration)
-  - [🏗️ Architecture](#-architecture)
-    - [High-Level Overview](#high-level-overview)
-- [Key Architectural Conceptsignal-Driven State:](#key-architectural-conceptsignal-driven-state)
-        - [Still in progress](#still-in-progress)
+    - [🔐 Authentication \& Security](#-authentication--security)
+    - [📸 Gallery \& Dashboard](#-gallery--dashboard)
+    - [🛠️ Administration](#️-administration)
+- [⚙️ Installation \& Setup](#️-installation--setup)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [📂 Project Structure](#-project-structure)
+- [🏗️ Architecture](#️-architecture)
+  - [High-Level Overview](#high-level-overview)
+  - [Key Architectural Concept](#key-architectural-concept)
+  - [🛠️ Tech Stack](#️-tech-stack)
+- [Framework: Angular v21](#framework-angular-v21)
+- [📄 License](#-license)
+- [Authors](#authors)
+  - [Code Contributors](#code-contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<hr>
 
-# CrowGallery - Web Frontend
+# Description
 
 ![Angular](https://img.shields.io/badge/Angular-v21-dd0031.svg?style=flat&logo=angular)
 ![Material](https://img.shields.io/badge/Material-v21-3f51b5.svg?style=flat&logo=angular)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 **CrowGallery Frontend** is a modern, responsive single-page application (SPA) built to manage and view photo collections. It serves as the user interface for the high-performance C++ [CrowQtServer] backend.
 
@@ -50,13 +75,75 @@ Built with the latest **Angular v21**, it leverages **Standalone Components**, *
 
 ---
 
-## 🏗️ Architecture
+# ⚙️ Installation & Setup
+
+## Prerequisites
+
+- Node.js (v18 or higher)
+- npm
+
+## Installation
+
+Running instance of the CrowQtServer backend.
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/web-gallery-frontend.git
+cd web-gallery-frontend
+```
+
+2. Install Dependencies
+
+```bash
+npm install
+```
+
+3. Configure Environment
+
+Check `src/environments/environment.ts`. Ensure `apiUrl` points to your C++ backend.
+
+```TypeScript
+export const environment = {
+production: false,
+apiUrl: 'http://localhost:8080' // Adjust port if necessary
+};
+```
+
+4. Run Development Server
+
+```Bash
+ng serve
+```
+
+Navigate to `http://localhost:4200/`.
+
+## 📂 Project Structure
+
+````
+src
+├── app/
+│   ├── components/      # Shared UI (Navbar, etc.)
+│   ├── dialogs/         # Modal Dialogs (Password Reset)
+│   ├── guards/          # Route protection logic
+│   ├── interceptors/    # HTTP Request modification
+│   ├── models/          # TypeScript Interfaces
+│   ├── pages/           # Views (Dashboard, Login, Admin)
+│   ├── service/         # API communication & State
+│   ├── app.component.ts # Root layout
+│   ├── app.config.ts    # Global provider config
+│   └── app.routes.ts    # Routing definitions
+└── environments/        # API configuration```
+````
+
+# 🏗️ Architecture
 
 This project follows a **Feature-Based Architecture** using **Angular Standalone Components**. It moves away from `NgModules` to reduce boilerplate and improve tree-shaking.
 
 ### High-Level Overview
 
 ```mermaid
+
 graph TD
     User[User / Browser] -->|Interaction| View[Component Template]
     View -->|Event Binding| Component[Standalone Component]
@@ -73,189 +160,52 @@ graph TD
         Interceptor -->|Add Token| API[Backend API]
     end
 ```
-# Key Architectural Conceptsignal-Driven State:
+
+## Key Architectural Concept
+
+**signal-Driven State**:
 
 We utilize Angular Signals (e.g., currentUser, passwordChangeRequired) instead of complex RxJS streams for synchronous state management.
 
 This ensures "Zoneless" compatibility and fine-grained UI updates.
 
-Standalone Components:
+**Standalone Components**:
 
 Components (e.g., UserManagementComponent, NavbarComponent) directly import their dependencies.
 
 This makes the codebase easier to refactor and test.
 
-Security Layer:
+**Security Layer**:
 
-Interceptor: The authInterceptor centrally manages the Authorization header.
+- Interceptor: The authInterceptor centrally manages the Authorization header.
+- Guards: Functional guards (CanActivateFn) handle redirect logic (e.g., forcing a user to change their password before accessing the dashboard).
 
-Guards: Functional guards (CanActivateFn) handle redirect logic (e.g., forcing a user to change their password before accessing the dashboard).
+## 🛠️ Tech Stack
 
-🛠️ Tech Stack
-Framework: Angular v21
+# Framework: Angular v21
 
-Language: TypeScript 5.x
+- Language: TypeScript 5.x
+- UI Library: Angular Material v21 & CDK
+- Styling: SCSS / CSS3 (Grid & Flexbox)
+- Icons: Material Icons
+- Build Tool: Angular CLI
 
-UI Library: Angular Material v21 & CDK
+# 📄 License
 
-Styling: SCSS / CSS3 (Grid & Flexbox)
+Distributed under the MIT License. See LICENSE for more information.
 
-Icons: Material Icons
+Copyright (c) 2025 ZHENG Robert
 
-Build Tool: Angular CLI
+# Authors
 
-⚙️ Installation & Setup
-Prerequisites
-Node.js (v18 or higher)
+- [![Zheng Robert - Core Development](https://img.shields.io/badge/Github-Zheng_Robert-black?logo=github)](https://www.github.com/Zheng-Bote)
 
-npm
+### Code Contributors
 
-Running instance of the CrowQtServer backend.
+![Contributors](https://img.shields.io/github/contributors/Zheng-Bote/web-gallery_webserver-admin?color=dark-green)
 
-1. Clone the repository
+[![Zheng Robert](https://img.shields.io/badge/Github-Zheng_Robert-black?logo=github)](https://www.github.com/Zheng-Bote)
 
-git clone [https://github.com/yourusername/web-gallery-frontend.git](https://github.com/yourusername/web-gallery-frontend.git)
-cd web-gallery-frontend
+<hr>
 
-2. Install Dependencies
-Bash
-
-npm install
-
-3. Configure Environment
-Check src/environments/environment.ts. Ensure apiUrl points to your C++ backend.
-
-TypeScript
-
-export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:8080' // Adjust port if necessary
-};
-4. Run Development Server
-Bash
-
-ng serve
-Navigate to http://localhost:4200/.
-
-📂 Project Structure
-
-```
-src
-├── app/
-│   ├── components/      # Shared UI (Navbar, etc.)
-│   ├── dialogs/         # Modal Dialogs (Password Reset)
-│   ├── guards/          # Route protection logic
-│   ├── interceptors/    # HTTP Request modification
-│   ├── models/          # TypeScript Interfaces
-│   ├── pages/           # Views (Dashboard, Login, Admin)
-│   ├── service/         # API communication & State
-│   ├── app.component.ts # Root layout
-│   ├── app.config.ts    # Global provider config
-│   └── app.routes.ts    # Routing definitions
-└── environments/        # API configuration```
-```
-
-##### Still in progress
-
-
-<!-- readme-tree start -->
-```
-.
-├── .github
-│   ├── actions
-│   │   └── doctoc
-│   │       ├── README.md
-│   │       ├── action.yml
-│   │       └── dist
-│   │           ├── index.js
-│   │           ├── index.js.map
-│   │           ├── licenses.txt
-│   │           └── sourcemap-register.js
-│   └── workflows
-│       ├── ghp-call_Readme.yml
-│       ├── ghp-create_doctoc.yml
-│       ├── ghp-markdown_index.yml
-│       ├── repo-actions_docu.yml
-│       ├── repo-call_Readme.yml
-│       ├── repo-create_doctoc.yml_
-│       ├── repo-create_doctoc_md.yml
-│       └── repo-create_tree_readme.yml
-├── .gitignore
-├── LICENSE
-├── README.md
-├── angular.json
-├── package-lock.json
-├── package.json
-├── proxy.conf.json
-├── public
-│   └── favicon.ico
-├── src
-│   ├── app
-│   │   ├── app.config.ts
-│   │   ├── app.css
-│   │   ├── app.html
-│   │   ├── app.routes.ts
-│   │   ├── app.spec.ts
-│   │   ├── app.ts
-│   │   ├── components
-│   │   │   ├── dashboard
-│   │   │   │   ├── dashboard.component.css
-│   │   │   │   ├── dashboard.component.html
-│   │   │   │   ├── dashboard.component.spec.ts
-│   │   │   │   └── dashboard.component.ts
-│   │   │   ├── home
-│   │   │   │   ├── home.component.css
-│   │   │   │   ├── home.component.html
-│   │   │   │   ├── home.component.spec.ts
-│   │   │   │   └── home.component.ts
-│   │   │   ├── login
-│   │   │   │   ├── login.component.css
-│   │   │   │   ├── login.component.html
-│   │   │   │   ├── login.component.spec.ts
-│   │   │   │   └── login.component.ts
-│   │   │   ├── navbar
-│   │   │   │   ├── navbar.component.component.css
-│   │   │   │   ├── navbar.component.component.html
-│   │   │   │   ├── navbar.component.component.spec.ts
-│   │   │   │   └── navbar.component.component.ts
-│   │   │   ├── user
-│   │   │   │   └── change-password
-│   │   │   │       ├── change-password.component.css
-│   │   │   │       ├── change-password.component.html
-│   │   │   │       ├── change-password.component.spec.ts
-│   │   │   │       └── change-password.component.ts
-│   │   │   └── user-management
-│   │   │       ├── user-management.component.css
-│   │   │       ├── user-management.component.html
-│   │   │       ├── user-management.component.spec.ts
-│   │   │       └── user-management.component.ts
-│   │   ├── dialogs
-│   │   │   └── password-reset-dialog.component.ts
-│   │   ├── guards
-│   │   │   └── password-reset.guard.ts
-│   │   ├── interceptors
-│   │   │   ├── auth.interceptor.spec.ts
-│   │   │   └── auth.interceptor.ts
-│   │   ├── models
-│   │   │   ├── auth.model.ts
-│   │   │   └── photo.model.ts
-│   │   └── service
-│   │       ├── admin.service.ts
-│   │       ├── auth.guard.ts
-│   │       ├── auth.service.spec.ts
-│   │       ├── auth.service.ts
-│   │       └── notification.service.ts
-│   ├── custom-theme.scss
-│   ├── environments
-│   │   └── environment.ts
-│   ├── index.html
-│   ├── main.ts
-│   └── styles.css
-├── tree.bak
-├── tsconfig.app.json
-├── tsconfig.json
-└── tsconfig.spec.json
-
-23 directories, 72 files
-```
-<!-- readme-tree end -->
+:vulcan_salute:
