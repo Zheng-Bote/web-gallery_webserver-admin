@@ -32,7 +32,6 @@
   - [High-Level Overview](#high-level-overview)
   - [Key Architectural Concept](#key-architectural-concept)
   - [🛠️ Tech Stack](#️-tech-stack)
-- [Framework: Angular v21](#framework-angular-v21)
 - [📄 License](#-license)
 - [Authors](#authors)
   - [Code Contributors](#code-contributors)
@@ -182,8 +181,7 @@ This makes the codebase easier to refactor and test.
 
 ## 🛠️ Tech Stack
 
-# Framework: Angular v21
-
+- Framework: Angular v21
 - Language: TypeScript 5.x
 - UI Library: Angular Material v21 & CDK
 - Styling: SCSS / CSS3 (Grid & Flexbox)
