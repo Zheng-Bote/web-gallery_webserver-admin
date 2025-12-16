@@ -16,25 +16,24 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 **Table of Contents**
 
 - [Description](#description)
   - [🚀 Features](#-features)
-    - [🔐 Authentication \& Security](#-authentication--security)
-    - [📸 Gallery \& Dashboard](#-gallery--dashboard)
-    - [🛠️ Administration](#️-administration)
-- [⚙️ Installation \& Setup](#️-installation--setup)
+    - [🔐 Authentication & Security](#-authentication--security)
+    - [📸 Gallery & Dashboard](#-gallery--dashboard)
+    - [🛠️ Administration](#-administration)
+- [⚙️ Installation & Setup](#-installation--setup)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [📂 Project Structure](#-project-structure)
-- [🏗️ Architecture](#️-architecture)
-  - [High-Level Overview](#high-level-overview)
+- [🏗️ Architecture](#-architecture)
+    - [High-Level Overview](#high-level-overview)
   - [Key Architectural Concept](#key-architectural-concept)
-  - [🛠️ Tech Stack](#️-tech-stack)
+  - [🛠️ Tech Stack](#-tech-stack)
 - [📄 License](#-license)
 - [Authors](#authors)
-  - [Code Contributors](#code-contributors)
+    - [Code Contributors](#code-contributors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <hr>
